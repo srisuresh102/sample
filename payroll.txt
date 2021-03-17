@@ -1,0 +1,137 @@
+import java.util.*;
+ public class Employee
+{ 
+private int id;
+   private employees_number;
+   private String name;
+   private String designation;
+   private String address;
+   private long ph_no;
+public void getData(int employees_number,String name,String designation,String address,long ph_no)
+{
+	this.employees_number=employees_number;
+	this.name=name;
+	this.designation=designation;
+	this.address=address;
+	this.ph_no=ph_no;
+}
+public void putData()
+{
+	System.out.println("employee deatils");
+	System.out.println("Employee Number:"+employees_number);
+	System.out.println("Name:"+name);
+	System.out.println("Designation:"+designation);
+	System.out.println("Address:"+address);
+	System.out.println("Ph_no:"+ph_no);
+}
+}
+class Salary extends Employee
+{
+	double BasicPay,DA=0.20,HRA=0.05,Gross_Pay,Pf=0.20,Income_tax=0.04 ,NetPay,Deduction;
+	public void getData1(double Basicpay )
+	{
+		        this.Basic_Pay=Basicpay;	
+		       
+		        
+	
+	}
+	public double calculate()
+	{
+		DA=0.21*BasicPay;
+		HRA=0.06*BasicPay;
+		Pf=0.18*BasicPay;
+		Incometax=0.05*BasicPay;
+		GrossPay=DA+HRA+BasicPay ;
+		Deduction=Incometax+Pf;
+		return NetPay=(GrossPay)-(Deduction);
+		
+	}
+	public void display()
+	{
+		 putData();
+		 System.out.println("Salary Details:");
+		 System.out.println("BasicPay:"+BasicPay);
+		 System.out.println("DA:"+DA);
+		 System.out.println("HRA:"+HRA);
+		 System.out.println("Pf:"+Pf);
+		 System.out.println("IncomeTax:"+Incometax);
+		 System.out.println("GrossPay:"+GrossPay);
+		 System.out.println("Deduction:"+Deduction);
+		 System.out.println("NetPay:"+NetPay);
+		
+	}
+	
+}
+public class Object extends Salary {
+	public static void main(String[] args)
+	{
+		double d;
+		int employees_number;
+		String name, designation,address;
+		long ph_no;
+		Object o=new Object();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Employee Id");
+		employees_number=sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter Employee Name");
+		name=sc.nextLine();
+		System.out.println("Enter Designation");
+		designation=sc.nextLine();
+		System.out.println("Enter address");
+		address=sc.nextLine();
+		System.out.println("Enter Phone number");
+		ph_no=sc.nextLong();
+		System.out.println("Enter basic pay");
+		o.getData(employees_number,name,designation,address,ph_no);
+		d=sc.nextDouble();
+		o.getData1(d);
+		o.calculate();
+		o.display();
+		
+	}
+}
+
+
+sub block
+private int id;
+   private employee_number;
+   private String name;
+   private String designation;
+   private String address;
+   private long ph_no;
+
+import java.util.*
+public class Employee{
+  
+    public int getId(){
+       return id;
+     }
+    public int getName(){
+       return id;
+     }
+     public String getDesignation(){
+       return designation;
+     }
+      public String getAddress(){
+       return address;
+     }
+      public long getPh_no(){
+       return Ph_no;
+     }
+     public void setId(int a){
+this.id=a;
+        }
+      public void setName(String b){
+this.name=b;
+        }
+      public void setDesignation(String c){
+        this.designation=c;
+        }
+       public void setAddress(String d){
+        this.address=d;
+        }
+       public void setPh_no(long e){
+        this.ph_no=e;
+        }
+} 
