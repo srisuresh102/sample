@@ -3,6 +3,9 @@ package com.cts.training.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 //@Table(name="user_details")
@@ -10,9 +13,13 @@ public class User {
 	@Id
 //	@Column(name ="user_id")
 	private Long id;
+	@NotEmpty(message="The Username field cannot be empty!")
+	@Size(min = 8, max= 5, message= "The Username should be minimum 8 characters")
 	private String username;
+	@NotEmpty(message="The address field cannot be empty")
 	private  String address;
 	private Long phone;
+	@NotEmpty(message="The password field cannot be empty")
 	private String password;
 	
 
